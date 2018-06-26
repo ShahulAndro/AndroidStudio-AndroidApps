@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+	<TextView
+		android:id="@+id/txtOpenPDF"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Open PDF"
+		android:textStyle="bold"
+		android:textSize="28dp"
+		android:layout_alignParentTop="true"
+		android:gravity="center"/>
+
+	<Button
+		android:id="@+id/btnPickPDFFromAsset"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="From asset"
+		android:layout_below="@+id/txtOpenPDF"/>
+
+	<Button
+		android:id="@+id/btnPickPDFFromURL"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="From URL"
+		android:layout_toRightOf="@+id/btnPickPDFFromAsset"
+		android:layout_below="@+id/txtOpenPDF"/>
+
+	<Button
+		android:id="@+id/btnPickPasswordProtectedPDFFromAsset"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Password protected"
+		android:layout_below="@+id/txtOpenPDF"
+		android:layout_toRightOf="@+id/btnPickPDFFromURL"/>
+	<Button
+		android:id="@+id/btnPickPDFFromInternalStorage"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="From internal storage"
+		android:layout_below="@+id/btnPickPDFFromAsset"/>
+
+	<TextView android:id="@+id/txtPassword"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Password: abcdef"
+		android:layout_below="@+id/btnPickPasswordProtectedPDFFromAsset"
+		android:layout_toRightOf="@+id/btnPickPDFFromInternalStorage"
+		android:gravity="center"/>
+
+
+	<com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/btnPickPasswordProtectedPDFFromAsset"/>
+
+</RelativeLayout>
